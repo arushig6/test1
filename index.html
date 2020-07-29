@@ -34,10 +34,10 @@ body {
 
 <div style="padding-left:10px">
   <h2 class="serif" style= "font-size:30px"><u>US Unemployment rate from 1990 to 2020</u></h2>
-  <p class="serif" style= "font-size:20px">The current COVID-19 pandemic situation has had an unprecedented impact on the US economy
-  with millions of people claiming unemployment and this event is been considered as one of the worst hit on the US economy.
-  In the last 30 years, every 10 year there has been an event which has contributed to increase in unemployment and through
-  the charts below you can know more about those events and compare the unemployment rates(Male or Female) with the current times.</p>
+<p class="serif" style= "font-size:20px">The current COVID-19 pandemic situation has had an unprecedented impact on the US economy
+  with millions of people claiming <br>unemployment and this event is been considered as one of the worst hit on the US economy.
+  In the last 30 years, every 10 year<br> there has been an event which has contributed to increase in unemployment and through
+  the slide show below you can know more about <br>those events and compare the unemployment rates(Male or Female) across time periods.</p>
   <br>
 </div>
 
@@ -110,6 +110,7 @@ d3.csv("https://raw.githubusercontent.com/arushig6/test/master/Unemp%20Rate%2019
        .attr("transform",
             "translate(" + (width/2) + " ," +
                               (height + margin.top + 20) + ")")
+       .attr("stroke", "#00008B")
        .style("text-anchor", "middle")
        .text("Year");
 
@@ -155,6 +156,7 @@ d3.csv("https://raw.githubusercontent.com/arushig6/test/master/Unemp%20Rate%2019
       .attr("y", 0 - margin.left)
       .attr("x",0 - (height / 2))
       .attr("dy", "13em")
+      .attr("stroke", "#00008B")
       .style("text-anchor", "middle")
       .text("Unemployment Rate");
 
@@ -167,7 +169,7 @@ d3.csv("https://raw.githubusercontent.com/arushig6/test/master/Unemp%20Rate%2019
           .x(function(d) { return x(+d.time) })
           .y(function(d) { return y(+d.All) })
         )
-        .attr("stroke", "black")
+        .attr("stroke", "purple")
         .style("stroke-width", 2)
         .style("fill", "none")
 
@@ -180,20 +182,23 @@ d3.csv("https://raw.githubusercontent.com/arushig6/test/master/Unemp%20Rate%2019
         .attr("cx", function(d) { return x(+d.time) })
         .attr("cy", function(d) { return y(+d.All) })
         .attr("r", 6)
-        .style("fill", "blue")
+        .style("fill", "purple")
 
     svg.append("line")
       .attr("x1", 150)
       .attr("x2", 117)
       .attr("y1", 100)
       .attr("y2", 240)
-      .attr("stroke-width","0.5px")
-      .attr("stroke" , "black")
+      .attr("stroke-width","0.9px")
+      .attr("stroke" , "#E8336D")
 
     svg.append("text")
       .attr("x", 150)
       .attr("y", 100)
+      .attr("fill", "#E8336D")
       .style("font-size", "13px")
+      .style("font-family", "Lato")
+      .style("font-weight", "900")
       .text("The Effect of the early Recession of 1990")
 
 
